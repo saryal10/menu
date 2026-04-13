@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printable Menu QR - MDM Mugling</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=Playfair+Display:wght@700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9;
+        }
+
+        .qr-frame {
+            height: 60vh; /* Scaled to be half-page+ for visibility */
+            width: auto;
+            aspect-ratio: 1 / 1;
+        }
+
+        @media print {
+            body { background-color: white; }
+            .no-print { display: none; }
+            .print-container { 
+                box-shadow: none !important; 
+                border: 2px solid #e2e8f0 !important;
+                margin-top: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-10">
+
+    <div class="print-container bg-white p-12 rounded-[3rem] shadow-2xl text-center max-w-2xl w-full border-4 border-slate-50">
+        
+        <div class="mb-8">
+            <h1 style="font-family: 'Playfair Display', serif;" class="text-5xl font-bold text-blue-900 mb-2">MDM Mugling</h1>
+            <div class="h-1 w-24 bg-orange-500 mx-auto rounded-full mb-4"></div>
+            <p class="text-slate-500 uppercase tracking-[0.4em] text-sm font-bold">New Year Party 2083</p>
+        </div>
+
+        <div class="flex justify-center mb-8">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=https://menu.wanderingtrailadventuresevents.com/&margin=10" 
+                 alt="Menu QR Code" 
+                 class="qr-frame rounded-3xl shadow-sm border border-slate-100">
+        </div>
+
+        <div class="space-y-2">
+            <h2 class="text-3xl font-black text-slate-800 uppercase tracking-tight">Scan for Menu</h2>
+            <p class="text-xl text-slate-500 italic font-light">Food & Beverage List</p>
+        </div>
+
+        <button onclick="window.print()" class="no-print mt-12 bg-blue-900 text-white px-8 py-3 rounded-full font-bold hover:bg-blue-800 transition shadow-lg">
+            <i class="fas fa-print mr-2"></i> Print This Page
+        </button>
+    </div>
+
+</body>
+</html>

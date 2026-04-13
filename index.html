@@ -3,262 +3,368 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu | Nepal's Grandest New Year Party 2083</title>
+    <title>Food & Drink Menu | Nepal's Grandest New Year Party 2083</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap');
         
-        body { font-family: 'Inter', sans-serif; }
-        h1, h2, .font-serif { font-family: 'Playfair Display', serif; }
+        body { font-family: 'Inter', sans-serif; background-color: #faf9f6; overflow-x: hidden; }
+        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+        .font-cinzel { font-family: 'Cinzel', serif; }
 
         .hero-gradient {
-            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('banner.png');
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('banner.png');
             background-size: cover;
             background-position: center;
         }
 
-        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); }
+        .glass { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(15px); }
         
-        .tab-active {
-            border-bottom: 3px solid #f97316;
-            color: #f97316;
+        .tab-btn {
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .tab-active { color: #b45309; }
+        .tab-active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 20%;
+            right: 20%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #b45309, transparent);
         }
 
-        .menu-card {
-            transition: all 0.3s ease;
-            border: 1px solid rgba(226, 232, 240, 0.5);
+        .menu-item-container {
+            transition: all 0.4s ease;
+            border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+        }
+        
+        @media (min-width: 768px) {
+            .menu-item-container:hover {
+                background-color: white;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                border-bottom-color: #b45309;
+            }
         }
 
-        .menu-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-            border-color: #f97316;
+        .leader-dots {
+            flex-grow: 1;
+            border-bottom: 1px dotted #cbd5e1;
+            margin: 0 10px;
+            margin-bottom: 6px;
+        }
+
+        .price-tag {
+            font-family: 'Cinzel', serif;
+            color: #b45309;
+            font-weight: 700;
+            white-space: nowrap;
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body class="text-slate-900">
 
     <nav class="fixed w-full z-50 glass shadow-sm border-b border-slate-200/50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
             <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-blue-900 rounded-full flex items-center justify-center">
-                    <span class="text-white text-xs font-bold">M</span>
+                <div class="w-7 h-7 md:w-8 md:h-8 bg-blue-900 rounded-full flex items-center justify-center">
+                    <span class="text-white text-[10px] md:text-xs font-bold">M</span>
                 </div>
-                <div class="text-xl font-extrabold tracking-tighter text-blue-900 uppercase">MDM Mugling</div>
+                <div class="text-base md:text-xl font-cinzel tracking-widest text-blue-900">MDM MUGLING</div>
             </div>
-            <div class="hidden md:flex space-x-10 text-sm font-semibold uppercase tracking-widest text-slate-600">
-                <a href="index.html" class="hover:text-blue-600 transition">Home</a>
-                <a href="#menu-section" class="text-orange-500">Menu</a>
-                <a href="index.html#pricing" class="bg-orange-500 text-white px-8 py-2.5 rounded-full hover:bg-orange-600 transition shadow-md">Book Now</a>
+            <div class="flex space-x-4 md:space-x-10 text-[9px] md:text-[11px] font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] text-slate-600 items-center">
+                <a href="#menu-section" class="text-amber-700">Menu</a>
+                <a href="index.html#pricing" class="border border-amber-700 text-amber-700 px-3 py-1.5 md:px-6 md:py-2 rounded-sm hover:bg-amber-700 hover:text-white transition">Book</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero-gradient pt-40 pb-24 text-center text-white px-4">
+    <header class="hero-gradient pt-32 pb-20 md:pt-48 md:pb-32 text-center text-white px-4">
         <div class="max-w-4xl mx-auto">
-            <span class="uppercase tracking-[0.4em] text-orange-400 font-bold text-xs mb-4 block">Motel Du Mugling</span>
-            <h1 class="text-5xl md:text-7xl font-bold mb-6">Culinary <span class="italic text-orange-50 font-serif">Selection</span></h1>
-            <p class="text-xl text-blue-100 font-light italic">Refreshed flavors for the New Year 2083 celebration.</p>
+            <div class="flex items-center justify-center gap-4 mb-4 md:mb-6">
+                <div class="h-[1px] w-8 md:w-12 bg-amber-500/50"></div>
+                <span class="uppercase tracking-[0.4em] md:tracking-[0.6em] text-amber-500 font-medium text-[9px] md:text-[10px]">A Journey of Perfect Taste</span>
+                <div class="h-[1px] w-8 md:w-12 bg-amber-500/50"></div>
+            </div>
+            <h1 class="text-4xl md:text-8xl font-serif mb-6 md:mb-8 leading-tight">Personalized Event <span class="italic font-light text-amber-100 block md:inline">Cuisine</span></h1>
+            <p class="text-sm md:text-lg text-slate-300 font-light max-w-2xl mx-auto italic tracking-wide">Refreshed flavors curated for the dawn of New Year 2083.</p>
         </div>
     </header>
 
-    <section id="menu-section" class="py-20 px-6 max-w-5xl mx-auto">
-        
-        <div class="flex justify-center mb-16 border-b border-slate-200">
-            <button onclick="showMenu('food')" id="food-tab" class="px-8 py-4 text-lg font-bold uppercase tracking-widest transition-all tab-active">
-                <i class="fas fa-utensils mr-2"></i> Food Menu
-            </button>
-            <button onclick="showMenu('drinks')" id="drinks-tab" class="px-8 py-4 text-lg font-bold uppercase tracking-widest text-slate-400 hover:text-slate-600 transition-all">
-                <i class="fas fa-glass-martini-alt mr-2"></i> Beverage List
-            </button>
-        </div>
-
-        <div id="food-menu" class="grid md:grid-cols-2 gap-4 animate-in fade-in duration-500">
-            <div class="menu-card bg-white p-6 rounded-2xl flex justify-between items-center">
-                <div>
-                    <h3 class="font-bold text-slate-800">Open Chicken Momo</h3>
-                    <p class="text-xs text-slate-400 uppercase tracking-tighter">Signature Specialty</p>
-                </div>
-                <span class="font-bold text-orange-600">400</span>
-            </div>
-            <div class="menu-card bg-white p-6 rounded-2xl flex justify-between items-center">
-                <h3 class="font-bold text-slate-800">Open Veg Momo</h3>
-                <span class="font-bold text-orange-600">300</span>
-            </div>
-            <div class="menu-card bg-white p-6 rounded-2xl flex justify-between items-center">
-                <h3 class="font-bold text-slate-800">Veg Satay</h3>
-                <span class="font-bold text-orange-600">500</span>
-            </div>
-            <div class="menu-card bg-white p-6 rounded-2xl flex justify-between items-center">
-                <h3 class="font-bold text-slate-800">Mixed Fruit</h3>
-                <span class="font-bold text-orange-600">250</span>
-            </div>
-            <div class="menu-card bg-white p-6 rounded-2xl flex justify-between items-center">
-                <h3 class="font-bold text-slate-800">Peanuts Sadeko</h3>
-                <span class="font-bold text-orange-600">200</span>
-            </div>
-            <div class="menu-card bg-white p-6 rounded-2xl flex justify-between items-center">
-                <h3 class="font-bold text-slate-800">Panir Chilly</h3>
-                <span class="font-bold text-orange-600">450</span>
-            </div>
-            <div class="menu-card bg-white p-6 rounded-2xl flex justify-between items-center">
-                <h3 class="font-bold text-slate-800">Chicken Chilly</h3>
-                <span class="font-bold text-orange-600">400</span>
-            </div>
-            <div class="menu-card bg-white p-6 rounded-2xl flex justify-between items-center">
-                <h3 class="font-bold text-slate-800">Chips Chilly</h3>
-                <span class="font-bold text-orange-600">250</span>
-            </div>
-            <div class="menu-card bg-white p-6 rounded-2xl flex justify-between items-center">
-                <h3 class="font-bold text-slate-800">French Fries</h3>
-                <span class="font-bold text-orange-600">200</span>
-            </div>
-            <div class="menu-card bg-white p-6 rounded-2xl flex justify-between items-center border-dashed border-2">
-                <h3 class="font-bold text-slate-800 italic">Variety Pizza</h3>
-                <span class="text-xs font-bold text-slate-400">FROM MAIN MENU</span>
+    <section id="menu-section" class="py-12 md:py-24 px-4 md:px-6 max-w-5xl mx-auto">
+        <div class="flex justify-center mb-12 md:mb-20">
+            <div class="inline-flex w-full md:w-auto justify-center space-x-4 md:space-x-12 border-b border-slate-200">
+                <button onclick="showMenu('food')" id="food-tab" class="tab-btn px-4 md:px-6 py-4 md:py-6 text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] md:tracking-[0.4em] tab-active">
+                    Food Menu
+                </button>
+                <button onclick="showMenu('drinks')" id="drinks-tab" class="tab-btn px-4 md:px-6 py-4 md:py-6 text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] md:tracking-[0.4em] text-slate-400">
+                    Beverage List
+                </button>
             </div>
         </div>
 
-        <div id="drinks-menu" class="hidden grid md:grid-cols-2 gap-4">
-            <div class="menu-card bg-slate-900 text-white p-6 rounded-2xl flex justify-between items-center">
-                <h3 class="font-bold">Gorkha Strong</h3>
-                <span class="font-bold text-orange-400">550</span>
-            </div>
-            <div class="menu-card bg-slate-900 text-white p-6 rounded-2xl flex justify-between items-center">
-                <h3 class="font-bold">Tuborg</h3>
-                <span class="font-bold text-orange-400">650</span>
-            </div>
-            <div class="menu-card bg-slate-900 text-white p-6 rounded-2xl flex justify-between items-center">
-                <h3 class="font-bold">Barasinghe</h3>
-                <span class="font-bold text-orange-400">600</span>
-            </div>
-            <div class="menu-card bg-slate-900 text-white p-6 rounded-2xl flex justify-between items-center">
-                <h3 class="font-bold">Carlsberg</h3>
-                <span class="font-bold text-orange-400">650</span>
-            </div>
-            <div class="menu-card bg-slate-900 text-white p-6 rounded-2xl flex justify-between items-center">
-                <div>
-                    <h3 class="font-bold">OD Regular</h3>
-                    <p class="text-[10px] text-slate-400 uppercase">Quarter</p>
+        <div id="food-menu" class="grid grid-cols-1 md:grid-cols-2 gap-x-16 animate-in fade-in duration-700">
+            <div class="space-y-1">
+                <div class="menu-item-container py-5 md:py-6">
+                    <div class="flex items-end justify-between">
+                        <h3 class="text-lg md:text-xl text-slate-800">Open Chicken Momo</h3>
+                        <div class="leader-dots"></div>
+                        <span class="price-tag">400</span>
+                    </div>
+                    <p class="text-[11px] md:text-xs text-slate-400 italic mt-2">Signature open-top dumplings with savory chicken and mountain herbs.</p>
                 </div>
-                <span class="font-bold text-orange-400">1200</span>
-            </div>
-            <div class="menu-card bg-slate-900 text-white p-6 rounded-2xl flex justify-between items-center">
-                <div>
-                    <h3 class="font-bold">Mt 8848</h3>
-                    <p class="text-[10px] text-slate-400 uppercase">Quarter</p>
+
+                <div class="menu-item-container py-5 md:py-6">
+                    <div class="flex items-end justify-between">
+                        <h3 class="text-lg md:text-xl text-slate-800">Open Veg Momo</h3>
+                        <div class="leader-dots"></div>
+                        <span class="price-tag">300</span>
+                    </div>
+                    <p class="text-[11px] md:text-xs text-slate-400 italic mt-2">Steamed garden-fresh vegetable dumplings served with spicy tomato chutney.</p>
                 </div>
-                <span class="font-bold text-orange-400">1000</span>
-            </div>
-            <div class="menu-card bg-slate-900 text-white p-6 rounded-2xl flex justify-between items-center">
-                <div>
-                    <h3 class="font-bold">Jack Daniels (JD)</h3>
-                    <p class="text-[10px] text-slate-400 uppercase">60 ML</p>
+
+                <div class="menu-item-container py-5 md:py-6">
+                    <div class="flex items-end justify-between">
+                        <h3 class="text-lg md:text-xl text-slate-800">Veg Satay</h3>
+                        <div class="leader-dots"></div>
+                        <span class="price-tag">500</span>
+                    </div>
+                    <p class="text-[11px] md:text-xs text-slate-400 italic mt-2">Grilled garden skewers served with an artisanal peanut glaze.</p>
                 </div>
-                <span class="font-bold text-orange-400">1500</span>
-            </div>
-            <div class="menu-card bg-slate-900 text-white p-6 rounded-2xl flex justify-between items-center">
-                <div>
-                    <h3 class="font-bold">Gorkhas Guns</h3>
-                    <p class="text-[10px] text-slate-400 uppercase">Quarter</p>
+
+                <div class="menu-item-container py-5 md:py-6">
+                    <div class="flex items-end justify-between">
+                        <h3 class="text-lg md:text-xl text-slate-800">Panir Chilly</h3>
+                        <div class="leader-dots"></div>
+                        <span class="price-tag">450</span>
+                    </div>
+                    <p class="text-[11px] md:text-xs text-slate-400 italic mt-2">Cubed paneer tossed with vibrant peppers and spicy oriental reduction.</p>
                 </div>
-                <span class="font-bold text-orange-400">1200</span>
+
+                <div class="menu-item-container py-5 md:py-6">
+                    <div class="flex items-end justify-between">
+                        <h3 class="text-lg md:text-xl text-slate-800">Chicken Chilly</h3>
+                        <div class="leader-dots"></div>
+                        <span class="price-tag">400</span>
+                    </div>
+                    <p class="text-[11px] md:text-xs text-slate-400 italic mt-2">Golden-fried morsels glazed in a spicy, umami-rich infusion.</p>
+                </div>
             </div>
-            <div class="menu-card bg-slate-900 text-white p-6 rounded-2xl flex justify-between items-center">
-                <h3 class="font-bold">Yeti Beer</h3>
-                <span class="font-bold text-orange-400">600</span>
+
+            <div class="space-y-1">
+                <div class="menu-item-container py-5 md:py-6">
+                    <div class="flex items-end justify-between">
+                        <h3 class="text-lg md:text-xl text-slate-800">Peanuts Sadeko</h3>
+                        <div class="leader-dots"></div>
+                        <span class="price-tag">200</span>
+                    </div>
+                    <p class="text-[11px] md:text-xs text-slate-400 italic mt-2">Crunchy local peanuts infused with lime, green chili, and cilantro.</p>
+                </div>
+
+                <div class="menu-item-container py-5 md:py-6">
+                    <div class="flex items-end justify-between">
+                        <h3 class="text-lg md:text-xl text-slate-800">Chips Chilly</h3>
+                        <div class="leader-dots"></div>
+                        <span class="price-tag">250</span>
+                    </div>
+                    <p class="text-[11px] md:text-xs text-slate-400 italic mt-2">Crispy potato chips tossed in a fiery blend of spices and peppers.</p>
+                </div>
+
+                <div class="menu-item-container py-5 md:py-6">
+                    <div class="flex items-end justify-between">
+                        <h3 class="text-lg md:text-xl text-slate-800">French Fries</h3>
+                        <div class="leader-dots"></div>
+                        <span class="price-tag">200</span>
+                    </div>
+                    <p class="text-[11px] md:text-xs text-slate-400 italic mt-2">Triple-cooked potato batons served with a pinch of Himalayan sea salt.</p>
+                </div>
+
+                <div class="menu-item-container py-5 md:py-6">
+                    <div class="flex items-end justify-between">
+                        <h3 class="text-lg md:text-xl text-slate-800">Mixed Fruit</h3>
+                        <div class="leader-dots"></div>
+                        <span class="price-tag">250</span>
+                    </div>
+                    <p class="text-[11px] md:text-xs text-slate-400 italic mt-2">A refreshing selection of seasonal fruits hand-picked for the table.</p>
+                </div>
+
+                <div class="menu-item-container py-5 md:py-6">
+                    <div class="flex items-end justify-between">
+                        <h3 class="text-lg md:text-xl text-slate-800 italic">Variety Pizza</h3>
+                        <div class="leader-dots"></div>
+                        <span class="price-tag">MENU</span>
+                    </div>
+                    <p class="text-[11px] md:text-xs text-slate-400 italic mt-2">Selection available from our main pizza menu.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="drinks-menu" class="hidden grid grid-cols-1 md:grid-cols-2 gap-x-16 animate-in fade-in duration-700">
+            <div class="space-y-1">
+                <p class="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em] text-amber-700 mb-2 mt-8 md:mt-6">Premium Spirits & Whiskies</p>
+                <div class="menu-item-container py-5 md:py-6">
+                    <div class="flex items-end justify-between">
+                        <h3 class="text-lg md:text-xl text-slate-800 font-serif">Jack Daniels (JD)</h3>
+                        <div class="leader-dots"></div>
+                        <span class="price-tag">1500</span>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] text-slate-400 uppercase tracking-widest mt-1">60 ML Premium Pour</p>
+                </div>
+                <div class="menu-item-container py-5 md:py-6">
+                    <div class="flex items-end justify-between">
+                        <h3 class="text-lg md:text-xl text-slate-800 font-serif">OD Regular</h3>
+                        <div class="leader-dots"></div>
+                        <span class="price-tag">1200</span>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] text-slate-400 uppercase tracking-widest mt-1">Quarter Bottle</p>
+                </div>
+                <div class="menu-item-container py-5 md:py-6">
+                    <div class="flex items-end justify-between">
+                        <h3 class="text-lg md:text-xl text-slate-800 font-serif">Gorkhas Guns</h3>
+                        <div class="leader-dots"></div>
+                        <span class="price-tag">1200</span>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] text-slate-400 uppercase tracking-widest mt-1">Quarter Bottle</p>
+                </div>
+                <div class="menu-item-container py-5 md:py-6">
+                    <div class="flex items-end justify-between">
+                        <h3 class="text-lg md:text-xl text-slate-800 font-serif">Mt 8848</h3>
+                        <div class="leader-dots"></div>
+                        <span class="price-tag">1000</span>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] text-slate-400 uppercase tracking-widest mt-1">Quarter Bottle</p>
+                </div>
+            </div>
+
+            <div class="space-y-1">
+                <p class="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em] text-amber-700 mb-2 mt-8 md:mt-6">Chilled Brews (650ml)</p>
+                <div class="menu-item-container py-5 md:py-6">
+                    <div class="flex items-end justify-between">
+                        <h3 class="text-lg md:text-xl text-slate-800 font-serif">Tuborg Premium</h3>
+                        <div class="leader-dots"></div>
+                        <span class="price-tag">650</span>
+                    </div>
+                </div>
+                <div class="menu-item-container py-5 md:py-6">
+                    <div class="flex items-end justify-between">
+                        <h3 class="text-lg md:text-xl text-slate-800 font-serif">Carlsberg</h3>
+                        <div class="leader-dots"></div>
+                        <span class="price-tag">650</span>
+                    </div>
+                </div>
+                <div class="menu-item-container py-5 md:py-6">
+                    <div class="flex items-end justify-between">
+                        <h3 class="text-lg md:text-xl text-slate-800 font-serif">Barasinghe</h3>
+                        <div class="leader-dots"></div>
+                        <span class="price-tag">600</span>
+                    </div>
+                </div>
+                <div class="menu-item-container py-5 md:py-6">
+                    <div class="flex items-end justify-between">
+                        <h3 class="text-lg md:text-xl text-slate-800 font-serif">Yeti Beer</h3>
+                        <div class="leader-dots"></div>
+                        <span class="price-tag">600</span>
+                    </div>
+                </div>
+                <div class="menu-item-container py-5 md:py-6">
+                    <div class="flex items-end justify-between">
+                        <h3 class="text-lg md:text-xl text-slate-800 font-serif">Gorkha Strong</h3>
+                        <div class="leader-dots"></div>
+                        <span class="price-tag">550</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-   
-    <section class="py-32 bg-white border-t border-slate-100">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-xs uppercase tracking-[0.5em] text-slate-400 font-bold mb-16 italic">Presented in Association With</p>
-            <div class="grid grid-cols-2 md:grid-cols-11 gap-8 lg:gap-10 items-center transition duration-500">
-                <div class="flex flex-col items-center gap-4">
-                    <img src="mdm.png" alt="MDM Mugling" class="h-12 md:h-14 w-auto object-contain">
-                    <p class="text-[8px] md:text-[9px] font-black text-slate-800 tracking-tighter uppercase">MDM Mugling</p>
+    <section class="py-16 md:py-32 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 text-center">
+            <p class="text-[10px] uppercase tracking-[0.5em] text-slate-400 font-bold mb-12 md:mb-16 italic">Presented in Association With</p>
+            <div class="flex flex-wrap justify-center gap-6 md:gap-10 items-center">
+                <div class="flex flex-col items-center gap-2 w-[40%] md:w-auto">
+                    <img src="mdm.png" alt="MDM Mugling" class="h-10 md:h-14 w-auto object-contain">
+                    <p class="text-[7px] md:text-[9px] font-black text-slate-800 uppercase">MDM Mugling</p>
                 </div>
-                <div class="flex flex-col items-center gap-4">
-                    <img src="wondering.png" alt="Wandering Trails" class="h-12 md:h-14 w-auto object-contain">
-                    <p class="text-[8px] md:text-[9px] font-bold text-slate-500 italic">Wandering Trails</p>
+                <div class="flex flex-col items-center gap-2 w-[40%] md:w-auto">
+                    <img src="wondering.png" alt="Wandering Trails" class="h-10 md:h-14 w-auto object-contain">
+                    <p class="text-[7px] md:text-[9px] font-bold text-slate-500 italic">Wandering Trails</p>
                 </div>
-                <div class="flex flex-col items-center gap-4">
-                    <img src="escapade.jpeg" alt="Escapade Nepal" class="h-12 md:h-14 w-auto object-contain">
-                    <p class="text-[8px] md:text-[9px] font-bold text-slate-400 tracking-widest uppercase">Escapade Nepal</p>
+                <div class="flex flex-col items-center gap-2 w-[40%] md:w-auto">
+                    <img src="escapade.jpeg" alt="Escapade Nepal" class="h-10 md:h-14 w-auto object-contain">
+                    <p class="text-[7px] md:text-[9px] font-bold text-slate-400 uppercase tracking-widest">Escapade Nepal</p>
                 </div>
-                <div class="flex flex-col items-center gap-4">
-                    <img src="project.jpeg" alt="Project Uddeshya" class="h-12 md:h-14 w-auto object-contain">
-                    <p class="text-[8px] md:text-[9px] font-bold text-slate-400 tracking-widest uppercase">Project Uddeshya</p>
+                <div class="flex flex-col items-center gap-2 w-[40%] md:w-auto">
+                    <img src="project.jpeg" alt="Project Uddeshya" class="h-10 md:h-14 w-auto object-contain">
+                    <p class="text-[7px] md:text-[9px] font-bold text-slate-400 uppercase tracking-widest">Project Uddeshya</p>
                 </div>
-                <div class="flex flex-col items-center gap-4">
-                    <img src="galaxy.jpeg" alt="Galaxy Mattress" class="h-12 md:h-14 w-auto object-contain">
-                    <p class="text-[8px] md:text-[9px] font-bold text-slate-400 tracking-widest uppercase">Galaxy Mattress</p>
+                <div class="flex flex-col items-center gap-2 w-[40%] md:w-auto">
+                    <img src="galaxy.jpeg" alt="Galaxy Mattress" class="h-10 md:h-14 w-auto object-contain">
+                    <p class="text-[7px] md:text-[9px] font-bold text-slate-400 uppercase tracking-widest">Galaxy Mattress</p>
                 </div>
-                <div class="flex flex-col items-center gap-4">
-                    <img src="shreeban.jpeg" alt="Shreeban Nature Camp" class="h-12 md:h-14 w-auto object-contain">
-                    <p class="text-[8px] md:text-[9px] font-bold text-slate-400 tracking-widest uppercase">Shreeban Nature Camp</p>
+                <div class="flex flex-col items-center gap-2 w-[40%] md:w-auto">
+                    <img src="shreeban.jpeg" alt="Shreeban Nature Camp" class="h-10 md:h-14 w-auto object-contain">
+                    <p class="text-[7px] md:text-[9px] font-bold text-slate-400 uppercase tracking-widest">Shreeban Nature Camp</p>
                 </div>
-                <div class="flex flex-col items-center gap-4">
-                    <img src="seeing.jpeg" alt="Seeing Hands Nepal" class="h-12 md:h-14 w-auto object-contain">
-                    <p class="text-[8px] md:text-[9px] font-bold text-slate-400 tracking-widest uppercase">Seeing Hands Nepal</p>
+                <div class="flex flex-col items-center gap-2 w-[40%] md:w-auto">
+                    <img src="seeing.jpeg" alt="Seeing Hands Nepal" class="h-10 md:h-14 w-auto object-contain">
+                    <p class="text-[7px] md:text-[9px] font-bold text-slate-400 uppercase tracking-widest">Seeing Hands</p>
                 </div>
-                 <div class="flex flex-col items-center gap-4">
-                    <img src="art.jpeg" alt="Seeing Hands Nepal" class="h-12 md:h-14 w-auto object-contain">
-                    <p class="text-[8px] md:text-[9px] font-bold text-slate-400 tracking-widest uppercase">The Art & Soul Foundation</p>
+                <div class="flex flex-col items-center gap-2 w-[40%] md:w-auto">
+                    <img src="art.jpeg" alt="Art & Soul" class="h-10 md:h-14 w-auto object-contain">
+                    <p class="text-[7px] md:text-[9px] font-bold text-slate-400 uppercase tracking-widest">Art & Soul</p>
                 </div>
-                 <div class="flex flex-col items-center gap-4">
-                    <img src="anl.jpeg" alt="Seeing Hands Nepal" class="h-12 md:h-14 w-auto object-contain">
-                    <p class="text-[8px] md:text-[9px] font-bold text-slate-400 tracking-widest uppercase">Aryal & Logistics LLC</p>
+                <div class="flex flex-col items-center gap-2 w-[40%] md:w-auto">
+                    <img src="anl.jpeg" alt="Aryal & Logistics" class="h-10 md:h-14 w-auto object-contain">
+                    <p class="text-[7px] md:text-[9px] font-bold text-slate-400 uppercase tracking-widest">Aryal & Logistics</p>
                 </div>
-                 <div class="flex flex-col items-center gap-4">
-                    <img src="jci.jpeg" alt="Seeing Hands Nepal" class="h-12 md:h-14 w-auto object-contain">
-                    <p class="text-[8px] md:text-[9px] font-bold text-slate-400 tracking-widest uppercase">Ichchhakamana</p>
-                </div>
-                 <div class="flex flex-col items-center gap-4">
-                    <img src="wanderingtrails.jpeg" alt="Seeing Hands Nepal" class="h-12 md:h-14 w-auto object-contain">
-                    <p class="text-[8px] md:text-[9px] font-bold text-slate-400 tracking-widest uppercase">WANDERING TRAIL HUMANITY</p>
+                <div class="flex flex-col items-center gap-2 w-[40%] md:w-auto">
+                    <img src="jci.jpeg" alt="Ichchhakamana" class="h-10 md:h-14 w-auto object-contain">
+                    <p class="text-[7px] md:text-[9px] font-bold text-slate-400 uppercase tracking-widest">Ichchhakamana</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-16 bg-slate-50 border-t border-slate-100">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-xs uppercase tracking-[0.5em] text-slate-400 font-bold mb-8 italic">Proud Sponsors</p>
-            <div class="flex justify-center">
-                <img src="pasteur.png" alt="Pasteur" class="h-12 w-auto opacity-80">
+    <section class="py-16 md:py-24 bg-slate-50 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-[10px] uppercase tracking-[0.5em] text-slate-400 font-bold mb-8 italic">Our Proud Sponsors</p>
+            <div class="flex justify-center items-center">
+                <div class="flex flex-col items-center gap-4">
+                    <img src="pasteur.png" alt="Pasteur" class="h-12 md:h-16 w-auto object-contain">
+                    <p class="text-[8px] md:text-[9px] font-black text-slate-800 tracking-tighter uppercase">Pasteur</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-slate-900 text-white py-20 px-6">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
+    <footer class="bg-slate-900 text-white py-12 md:py-20 px-4 md:px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
             <div>
-                <div class="flex items-center gap-3 mb-6">
+                <div class="flex items-center justify-center md:justify-start gap-3 mb-6">
                     <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-slate-900 font-black">M</div>
-                    <p class="font-bold text-2xl tracking-tighter uppercase">Mugling</p>
+                    <p class="font-cinzel text-xl tracking-widest uppercase">MUGLING</p>
                 </div>
                 <p class="text-slate-400 text-sm italic">"Where the waters meet for a new beginning."</p>
             </div>
             <div class="text-sm text-slate-400 space-y-2">
-                <p class="uppercase font-bold text-white tracking-widest mb-4 text-xs">Contacts</p>
+                <p class="uppercase font-bold text-white tracking-[0.3em] mb-4 text-[10px]">Reservations</p>
                 <p>Rikesh: 9841729236</p>
                 <p>Suraj: 9811120755</p>
                 <p>Anil: 9851124693</p>
             </div>
-            <div class="flex flex-col md:items-end">
-                <p class="uppercase font-bold text-white tracking-widest text-xs mb-4">Follow Us</p>
+            <div class="flex flex-col items-center md:items-end">
+                <p class="uppercase font-bold text-white tracking-[0.3em] text-[10px] mb-4">Social Presence</p>
                 <div class="flex space-x-6 text-2xl">
-                    <a href="#" class="hover:text-green-500 transition"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-facebook"></i></a>
+                    <a href="https://wa.me/9779841729236" class="hover:text-amber-500 transition"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="hover:text-amber-500 transition"><i class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
-        <div class="text-center mt-16 pt-8 border-t border-white/5 text-[10px] uppercase tracking-widest text-slate-500">
-            © 2083 Wandering Trail Adventures | Designed By: Aryal & Logistics LLC
+        <div class="text-center mt-12 md:mt-16 pt-8 border-t border-white/5 text-[8px] md:text-[9px] uppercase tracking-[0.3em] md:tracking-[0.4em] text-slate-500 px-4">
+            © 2083 Wandering Trail Adventures | Design: Aryal & Logistics LLC
         </div>
     </footer>
 
@@ -272,16 +378,16 @@
             if (type === 'food') {
                 foodMenu.classList.remove('hidden');
                 drinksMenu.classList.add('hidden');
-                foodTab.classList.add('tab-active', 'text-orange-500');
+                foodTab.classList.add('tab-active');
                 foodTab.classList.remove('text-slate-400');
-                drinksTab.classList.remove('tab-active', 'text-orange-500');
+                drinksTab.classList.remove('tab-active');
                 drinksTab.classList.add('text-slate-400');
             } else {
                 drinksMenu.classList.remove('hidden');
                 foodMenu.classList.add('hidden');
-                drinksTab.classList.add('tab-active', 'text-orange-500');
+                drinksTab.classList.add('tab-active');
                 drinksTab.classList.remove('text-slate-400');
-                foodTab.classList.remove('tab-active', 'text-orange-500');
+                foodTab.classList.remove('tab-active');
                 foodTab.classList.add('text-slate-400');
             }
         }
